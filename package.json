@@ -1,23 +1,17 @@
 {
-  "name": "amymaraisane",
+  "name": "demo",
   "version": "1.0.0",
-  "description": "blog",
+  "description": "",
   "main": "app.js",
   "dependencies": {
-    "ejs": "^2.6.1"
+    "ejs": "^2.6.1",
+    "express": "^4.17.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amymaraisane/1st-node-app.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amymaraisane/1st-node-app/issues"
-  },
-  "homepage": "https://github.com/amymaraisane/1st-node-app#readme"
+  "license": "ISC"
 }

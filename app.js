@@ -11,6 +11,8 @@ app.get("/search", (req, res)=>{
     res.render("search");
 });
 
-app.listen(3000, ()=>{
-    console.log("server listening on said port");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, ()=>{
+    console.log(`Our app is running on port ${ PORT }`);
 });

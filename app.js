@@ -12,7 +12,6 @@ app.get("/search", (req, res)=>{
 });
 
 const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Our app is running on port ${ PORT }`);
 });

@@ -1,9 +1,9 @@
 var express = require ('express');
     router  = express.Router();
-    Content = require('../models/content');
+    db = require('../models');
 
 router.get('/', (req, res)=>{
-    res.send('Hello from todos routes!');
+    res.send(Content.find({}));
 });
 
 module.exports = router;

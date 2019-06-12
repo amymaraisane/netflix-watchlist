@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var contentSchema = new mongoose.Schema({
     title: {
-        type: String,
+        type: String,  
         required: 'Add content title here'
     },
     completed: {

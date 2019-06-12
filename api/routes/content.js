@@ -2,7 +2,7 @@ var express = require ('express');
     router  = express.Router();
     db = require('../models');
 
-//GET all data from db
+//GET all data from db using .find()
 router.get('/', (req, res)=>{
     db.Content.find()
     .then(todos=>{
@@ -13,7 +13,7 @@ router.get('/', (req, res)=>{
     })
 });
 
-//POST new data to the db
+//POST new data to the db using .create()
 router.post('/', (req, res)=>{
     db.Content.create(req.body)
     .then(newContent=>{
@@ -27,7 +27,7 @@ router.post('/', (req, res)=>{
 module.exports = router;
 
 
-//GET one data item from db
+//GET one data item from db using .findById()
 router.get('/:contentid', (req, res)=>{
     db.Content.findById(req.params.contentid)
     .then(foundContent=>{
@@ -38,7 +38,7 @@ router.get('/:contentid', (req, res)=>{
     })
 });
 
-//PUT an update onto one data item
+//PUT an update onto one data item using .findOneAndUpdate()
 router.put('/:contentid', (req, res)=>{
     db.Content.findOneAndUpdate({_id: req.params.contentid}, req.body, {new: true})
     .then(updatedContent=>{
@@ -49,7 +49,7 @@ router.put('/:contentid', (req, res)=>{
     })
 });
 
-//DELETE one data item
+//DELETE one data item using .findOneAndRemove()
 router.delete('/:contentid', (req, res)=>{
     db.Content.findOneAndRemove({_id: req.params.contentid})
     .then(()=>{

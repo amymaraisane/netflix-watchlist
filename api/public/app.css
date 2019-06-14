@@ -11,25 +11,23 @@ body {
     background-color: black;
 }
 .container {  
+    margin-top: 15rem;
     position: absolute;
     z-index: 1;
     color: white;
+   
 }
 
-.container2 {
-    /* z-index: 2; */
-    margin-top: 20%;
-    color: white;
+.container .search {
+    text-align: center;
 }
 
 h3 {
-    text-align: center;
     color: grey;
     font-size: 2rem;
 }
 
-ul {
-    margin-top: 10rem;
+.container ul {
     margin-left: 10rem;
     z-index: 2;
     color: white;

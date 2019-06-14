@@ -1,7 +1,32 @@
-<h1>Netflix Watchlist</h1>
+<head>
+    <link rel="stylesheet" href="app.css" type="text/css">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+</head>
 
-<h3>Binge Smarter</h3>
-<!-- 
-<form action="/api/content/" method="POST">
-    <input type="text" placeholder="The West Wing" name="Content Title">
-</form> -->
+<body>
+
+<div class="container">
+    <div class="container2">
+        <h3>Binge Smarter</h3>
+    
+        <section class="form" action="/api/content" method="GET">
+            <input type="text" placeholder="Content Title" id="contentInput">
+        <button>Submit</button>
+        </section>
+
+        <ul class="list">
+            <li>I like you just the way you are</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<script src="app.js" type="text/javascript"></script>
+</body>
+
+

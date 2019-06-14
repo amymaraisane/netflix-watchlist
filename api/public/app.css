@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+    height: 100%;
+}
+.container {  
+    background-image: url(/images/netflix-background2.svg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: absolute;  
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    color: white;
+}
+
+.container2 {
+    /* z-index: 2; */
+    margin-top: 20%;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    color: grey;
+    font-size: 2rem;
+}
+
+ul {
+    margin-top: 10rem;
+    margin-left: 10rem;
+    z-index: 2;
+}
+
+.item {
+    width: 100%;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    transition: all .3s ease;
+    list-style: square;
+}
+
+i {
+    color: black;
+}
+
+.done {
+    text-decoration: line-through;
+    color: grey;
+}

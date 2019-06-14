@@ -1,6 +1,5 @@
 var db = require('../models');
 
-//adding the functions into an object 
 exports.getContent = (req, res)=>{
     db.Content.find()
     .then(todos=>{
@@ -14,7 +13,7 @@ exports.getContent = (req, res)=>{
 exports.addContent = (req, res)=>{
     db.Content.create(req.body)
         .then(newContent=>{
-            res.status(201).json(newContent);
+            res.json(newContent);
         })
         .catch(err=>{
             res.send(err);
@@ -52,3 +51,7 @@ exports.deleteOne = (req, res)=>{
 }
 
 module.exports = exports;
+
+
+
+

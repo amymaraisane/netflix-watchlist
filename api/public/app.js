@@ -8,14 +8,32 @@ $(document).ready(function(){
             createItem();
         }
     })
-    $('.list').on('click', 'span', function(){
+    $('.list').on('click', 'li', function(){
+        updateContent($(this));
+    })
+    $('.list').on('click', 'span', function(e){
+        e.stopPropagation();
         removeContent($(this).parent());
     })
 });
 
+function updateContent(selected){
+    var updateURL = '/api/content/' + selected.data('id');
+    var status = !selected.data('completed');
+    var updateData = {completed: status};
+    $.ajax({
+        method: 'PUT',
+        url: updateURL,
+        data: updateData
+    })
+    .then(function(updatedContent){
+        selected.toggleClass("done");
+        selected.data('completed', status);
+    })
+}
+
 function removeContent(selected){
     var clickedId = selected.data('id');
-    console.log(clickedId);
     var deleteURL = '/api/content/' + clickedId;
     $.ajax({
         method: 'DELETE',
@@ -36,8 +54,9 @@ function addContent(allData){
 }
 
 function addOne(content){
-    var newContent = $('<li class="item">' + content.title + content.completed + '<span class="delete">x</span></li>');
+    var newContent = $('<li class="item">' + content.title + '<span class="delete">x</span></li>');
     newContent.data('id', content._id);
+    newContent.data('completed', content.completed);
     if(content.completed){
         newContent.addClass("done");
     }

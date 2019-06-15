@@ -8,16 +8,34 @@ $(document).ready(function(){
             createItem();
         }
     })
+    $('.list').on('click', 'span', function(){
+        var clickedId = $(this).parent().data('id');
+        console.log(clickedId);
+        var deleteURL = '/api/content/' + clickedId;
+        $.ajax({
+            method: 'DELETE',
+            url: deleteURL
+        })
+        .then(function(data){
+            console.log(data);
+        });
+        $(this).parent().remove();
+    })
 });
 
 function addContent(allData){
     allData.forEach(content=>{
-        var newContent = $('<li class="item">' + content.title + content.completed + '<span>x</span></li>');
-        if(content.completed){
-            newContent.addClass("done");
-        }
-        $('.list').append(newContent);
-    })
+        addOne(content);
+    });
+}
+
+function addOne(content){
+    var newContent = $('<li class="item">' + content.title + content.completed + '<span class="delete">x</span></li>');
+    newContent.data('id', content._id);
+    if(content.completed){
+        newContent.addClass("done");
+    }
+    $('.list').append(newContent);
 }
 
 function createItem(){
@@ -25,11 +43,15 @@ function createItem(){
     $.post('/api/content', {title: userInput})
     .then(function(newContent){
         $('#contentInput').val('');
-        var newLi = $('<li class="item">' + newContent.title + '<span>x</span></li>');
-        $('.list').append(newLi);
+        addOne(newContent);
     })
     .catch(function(err){
         console.log(err);
     })
 }
 
+// function deleteItem(){
+//     $('delete').on('click', function(event){
+//         //
+//     })
+// }

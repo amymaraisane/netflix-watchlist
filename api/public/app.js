@@ -26,10 +26,11 @@ function createItem(){
     $.post('/api/content', {title: userInput})
     .then(function(newContent){
         $('#contentInput').val('');
-        var newLi = $('<li class="item">' + newContent.title + '</li>');
+        var newLi = $('<li class="item">' + newContent.title + '<span>X</span></li>');
         $('.list').append(newLi);
     })
     .catch(function(err){
         console.log(err);
     })
 }
+

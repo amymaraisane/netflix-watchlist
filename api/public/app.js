@@ -9,19 +9,25 @@ $(document).ready(function(){
         }
     })
     $('.list').on('click', 'span', function(){
-        var clickedId = $(this).parent().data('id');
-        console.log(clickedId);
-        var deleteURL = '/api/content/' + clickedId;
-        $.ajax({
-            method: 'DELETE',
-            url: deleteURL
-        })
-        .then(function(data){
-            console.log(data);
-        });
-        $(this).parent().remove();
+        removeContent($(this).parent());
     })
 });
+
+function removeContent(selected){
+    var clickedId = selected.data('id');
+    console.log(clickedId);
+    var deleteURL = '/api/content/' + clickedId;
+    $.ajax({
+        method: 'DELETE',
+        url: deleteURL
+    })
+    .then(function(data){
+        selected.remove();
+    })
+    .catch(function(err){
+        console.log(err);
+    });
+}
 
 function addContent(allData){
     allData.forEach(content=>{
@@ -49,9 +55,3 @@ function createItem(){
         console.log(err);
     })
 }
-
-// function deleteItem(){
-//     $('delete').on('click', function(event){
-//         //
-//     })
-// }

@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $.getJSON('/api/content')
     .then(function(allData){
-        console.log(allData);
         addContent(allData);
     })
     $('#contentInput').keypress(function(event){
@@ -13,7 +12,7 @@ $(document).ready(function(){
 
 function addContent(allData){
     allData.forEach(content=>{
-        var newContent = $('<li class="item">' + content.title + content.completed + '</li>');
+        var newContent = $('<li class="item">' + content.title + content.completed + '<span>x</span></li>');
         if(content.completed){
             newContent.addClass("done");
         }
@@ -26,7 +25,7 @@ function createItem(){
     $.post('/api/content', {title: userInput})
     .then(function(newContent){
         $('#contentInput').val('');
-        var newLi = $('<li class="item">' + newContent.title + '<span>X</span></li>');
+        var newLi = $('<li class="item">' + newContent.title + '<span>x</span></li>');
         $('.list').append(newLi);
     })
     .catch(function(err){

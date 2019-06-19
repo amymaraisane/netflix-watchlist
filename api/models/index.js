@@ -3,7 +3,9 @@ var mongoose = require('mongoose');
 mongoose.set('debug', true);
 mongoose.set('useFindAndModify', false);
 
-mongoose.connect('mongodb://localhost/albums', {
+const url = process.env.DATABASEURL || 'MONGODB://localhost/albums'
+
+mongoose.connect(url, {
   useNewUrlParser: true,
   useCreateIndex: true
 });

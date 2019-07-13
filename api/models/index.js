@@ -1,16 +1,16 @@
 var mongoose = require('mongoose');
-//setting debug to true allows us to see error details
+
 mongoose.set('debug', true);
-mongoose.set('useFindAndModify', false);
 
-const url = process.env.DATABASEURL || 'MONGODB://localhost/albums'
+const URI = 'mongodb://localhost/watchlist'
 
-mongoose.connect(url, {
+mongoose.connect(URI, {
   useNewUrlParser: true,
-  useCreateIndex: true
+  useCreateIndex: true,
 });
 
-//using promises is cleaner than using callbacks
+mongoose.set('useFindAndModify', false);
+
 mongoose.Promise = Promise;
 
 module.exports.Content = require('./content');

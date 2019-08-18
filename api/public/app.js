@@ -5,7 +5,7 @@ $(document).ready(function(){
     })
     $('#contentInput').keypress(function(event){
         if(event.which == 13){
-            createItem();
+            createItem(); 
         }
     })
     $('.list').on('click', 'li', function(){

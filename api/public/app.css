@@ -42,28 +42,29 @@ h3 {
     width: 80%;
     display: block;
 	margin: 0 auto;
-    height: 60px;
+    height: 4rem;
+    font-size: 2rem;
 	background: none;
 	border: none;
 	border-bottom: 1px solid grey;
 	outline: none;
-	font: 300 28px 'Ubuntu', sans-serif;
+	font: 'Ubuntu', sans-serif;
 	color: grey;
 }
 
 .container ul {
-    margin-left: 10rem;
-    margin-right: 15rem;
+    margin-left: 5rem;
     z-index: 2;
     color: white;
 }
 
 .item {
 	width: 100%;
-	height: 30px;
-	line-height: 30px;
-	font-size: 20px;
-	padding: 0 20px;
+    height: 2rem;
+    flex-wrap: wrap;
+	line-height: 2rem;
+	font-size: 1.5rem;
+	padding: 0 1rem;
 	color: grey;
     transition: all .3s ease;
     list-style: square;

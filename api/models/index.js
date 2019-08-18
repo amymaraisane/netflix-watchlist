@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 mongoose.set('debug', true);
 
-const URI = DATABASEURL || 'mongodb://localhost/watchlist'
+const URI = DATABASEURL
 
 
 mongoose.connect(URI, {

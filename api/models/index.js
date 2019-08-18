@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 mongoose.set('debug', true);
 
-const URI = DATABASEURL
+const URI = process.env.DATABASEURL
 
 mongoose.connect(URI, {
   useNewUrlParser: true,

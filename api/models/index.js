@@ -16,5 +16,3 @@ mongoose.Promise = Promise;
 
 module.exports.Content = require('./content');
 
-
-

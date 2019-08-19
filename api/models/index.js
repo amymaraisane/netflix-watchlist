@@ -1,8 +1,9 @@
-var mongoose = require('mongoose');
+require('dotenv').config()
+const mongoose = require('mongoose');
 
 mongoose.set('debug', true);
 
-const URI = 'mongodb://localhost/watchlist' || DATABASEURL
+const URI = process.env.DATABASEURL || DATABASEURL
 
 mongoose.connect(URI, {
   useNewUrlParser: true,

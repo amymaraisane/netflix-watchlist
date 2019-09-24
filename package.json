@@ -16,9 +16,11 @@
   },
   "devDependencies": {
     "chai": "*",
+    "mixin-deep": "^2.0.1",
     "mocha": "*",
     "nock": "^11.3.5",
     "nodemon": "^1.19.1",
+    "set-value": "^3.0.1",
     "supertest": "^4.0.2"
   },
   "scripts": {

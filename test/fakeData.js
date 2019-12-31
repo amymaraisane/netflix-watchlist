@@ -11,7 +11,7 @@ exports.getRandomUser = () =>{
   fetch('https://randomuser.me/api/')
     .then(throwNon200)
     .then(res => res.json())
-    .catch(e => console.log('Error getting new random user: ', e.message));
+    .catch(e => console.log('Error getting random user: ', e.message));
 }
 
 module.exports = exports
